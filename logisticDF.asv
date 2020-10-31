@@ -1,0 +1,40 @@
+function [df] = logisticDF(x0)
+% this calculates Df2, so second derivative of least squares
+% error and partial derivatives!
+[time,data]=runAll();
+time = datenum(time);
+a=x0(1); b=x0(2); c=x0(3);
+
+a=x0(1); b=x0(2); c=x0(3);
+[row,col] = size(data);
+df = zeros(3);
+err = zeros(1,3);
+erra = zeros(1,3);
+errb = zeros(1,3);
+erraa = zeros(1,3);
+errab = zeros(1,3);
+errac = zeros(1,3);
+errbb = zeros(1,3);
+errbc = zeros(1,3);
+errcc = zeros(1,3);
+
+for i=1:1:row
+    err(i) = data(i)-(a/(1+b*exp(-1*c+time(i))));
+    erra = -1/(1+b*exp(-1*c*time(i)));
+    errb = a*exp(-1*c*time(i))/((1+b*exp(-1*c*time(i)))^2);
+    errc = -1*a*b*time(i)*exp(-1*c*time(i))/((1+b*exp(-1*c*time(i)))^2);
+    errab = exp(-c*time(i))/((1+b*exp(-c*time
+    errac = 
+    errbb = -2*a*exp(-c*time(i))^2/(1+b*(exp(-c*time(i))^3));
+    errbc
+    errcc
+end
+
+for i = 1:1:row
+    df(1) = df(1) + 2*err(i)*erra(i);
+    df(2) = df(2) + 2*err(i)*errb(i);
+    df(3) = df(3) + 2*err(i)*errc(i); 
+end
+
+end
+

@@ -33,6 +33,7 @@ function [xbest,fbest,itrcnt,stat] = NewtonOpt(f,Df,Df2,x0,gradTol,xTol,itrBound
 
 xbest = x0;
 % inv(A)*b can be less accurate than A/b
+
 d  = -1 * (Df2(xbest) / Df(xbest));
 a = calcA(s, xbest, d, f, Df, Df2);
 i = 1;

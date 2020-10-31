@@ -15,6 +15,7 @@ switch(s)
         a = ((a2^2-a3^2)*f(x1) + (a3^2-a1^2)*f(x2) + (a1^2-a2^2)*f(x3)) ...
             /(2*(a2-a3)*f(x1) + 2*(a3-a1)*f(x2) + 2*(a1-a2)*f(x3));
     case 3
+        % Bisection
         if ((Df(x)'*d<0) == (Df(x+d)'*d<0))
             a = 1;
         else

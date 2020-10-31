@@ -1,3 +1,4 @@
+function [timeVector, usData] = runAll()
 
 type = 'confirmed'; % 'confirmed','deaths','recovered'
 
@@ -9,4 +10,5 @@ usData = cell2mat(mergedData(176,2));
 
 % plotCoronaData(timeVector,mergedData,{'Denmark','US','Germany','China','Italy'},type);
 
-plot(timeVector, usData)
+%plot(timeVector, usData);
+end
